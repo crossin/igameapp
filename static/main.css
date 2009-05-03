@@ -1,0 +1,100 @@
+html, body {
+	padding: 0; margin: 0; font-size: 14px; font-family: arial;
+}
+html {
+	background: url(/static/images/bg.png) #fff; color: #552;
+}
+
+img {
+	border: 0px; padding: 0; margin: 0;
+}
+
+a {
+	color: #785
+}
+a:hover {
+	color: #530
+}
+
+.link_login {
+	font-size: 0.8em;
+}
+.link_login a {
+	text-decoration: none; margin: 0;
+}
+
+.nav td{
+	background: url(/static/images/nav.png); text-align: center; font: bold 1.2em Georgia, serif;
+}
+
+.nav td a {
+	color: #552; text-decoration: none;  display: block; background: url(/static/images/nav.png); padding: 5px;
+}
+.nav td a:hover {
+	color: #530; text-decoration: underline; background: url(/static/images/nav2.png);
+}
+
+#gamesearch {
+	background: #cda;
+}
+#gamesearch form {
+	margin: auto; text-align:center; padding: 2px;
+}
+#gamesearch .input-text {
+	border: black 1px solid; width: 247px;
+}
+#gamesearch .input-submit {
+	border: black 1px solid; width: 38px;
+}
+
+.gameblock {
+	padding: 0; margin: 0 auto; width: 664px;
+}
+.gameblock h1 {
+	border: #999 1px solid; padding: 2px 4px; margin: 2px; font-size: 1em; background: #cda;
+}
+.gameblock h1 a {
+	color: #f90; text-decoration: none;
+}
+.gameblock h1 a:hover {
+	color: #530;
+}
+.gameblock a.game {
+	padding: 2px; display: block; background: #cda; float: left; margin: 2px 3px; overflow: hidden; width: 73px; color: #552; position: relative; height: 92px; text-decoration: none;
+}
+.gameblock a.game:hover {
+	background: #aa0;
+}
+.gameblock a.game:hover span {
+	background: #aa0;
+}
+.gameblock a.game span {
+	display: block; font-size: 0.8em; background: #cda; left: 2px; width: 73px; bottom: 2px; position: absolute; text-align: center;
+}
+.gameblock div.more {
+	clear: both; padding-right: 2px; font-weight: bold; text-align: right; text-decoration: none;
+}
+
+#index {
+	background: url(/static/images/side-bg.png); 
+}
+
+ul.cloud {
+	padding: 0; font-size: 1em; margin: 10px 0; width: 300px; list-style-type: none; text-align: justify;
+}
+ul.cloud li {
+	float: left; padding: 0; margin: 0; width: 50%;
+}
+ul.cloud a {
+	text-decoration: none; padding: 0 4px
+}
+ul.cloud a:hover {
+	text-decoration: underline;
+}
+
+#footer {
+	font-size: 0.8em; background: #cc9; 
+}
+#footer a{
+	text-decoration: none;
+}
