@@ -9,6 +9,10 @@ img {
 	border: 0px; padding: 0; margin: 0;
 }
 
+table {
+	background: #fff;
+}
+
 a {
 	color: #785
 }
@@ -32,6 +36,10 @@ a:hover {
 }
 .nav td a:hover {
 	color: #530; text-decoration: underline; background: url(/static/images/nav2.png);
+}
+
+#login {
+	background: transparent; font-size: 1.2em;
 }
 
 #gamesearch {
@@ -95,6 +103,86 @@ ul.cloud a:hover {
 #footer {
 	font-size: 0.8em; background: #cc9; 
 }
-#footer a{
+#footer a {
 	text-decoration: none;
+}
+
+#tag h2 {
+	font-size: 1.2em; margin: 0px 0px 4px 0px;
+}
+#tag p {
+	text-align: center; font-size: 1em; margin: 10px 0px;
+}
+#tag a {
+	text-decoration: none;
+}
+
+#game {
+	text-align: center;
+}
+
+.game-description {
+	background: url(/static/images/bg_game_description.png); padding: 0; margin: 15px auto; width: 663px; font-family: arial; position: relative;
+}
+.game-description span {
+	display: block; font-size: 12px; line-height: 10px; position: absolute; height: 10px;
+}
+.game-description b {
+	color: #000;
+}
+.game-description .thumb {
+	border: #000 1px solid; left: 8px; width: 73px; top: 28px; height: 80px; position: absolute;
+}
+.game-description span.title {
+	font-weight: bold; left: 101px; top: 18px;
+}
+.game-description span.plays {
+	left: 101px; top: 32px;
+}
+.game-description span.rating {
+	left: 425px; top: 18px;
+}
+.game-description span.author {
+	font-weight: bold; left: 425px; top: 32px;
+}
+.game-description div.description {
+	padding-left: 101px; font-size: 12px; padding-top: 62px;
+}
+.game-description p {
+	margin: 0px 30px 12px 0px;
+}
+
+.description-bottom {
+	background: url(/static/images/bg_game_description_bottom.png); height: 15px;
+}
+
+.game-review {
+	padding: 0; background: url(/images/bg_game_description.png) #fff; margin: 5px auto; width: 663px; height: 166px; font-family: arial; position: relative;
+}
+.game-review span {
+	display: block; font-size: 12px; line-height: 10px; position: absolute; height: 10px
+}
+.game-review span b {
+	color: #000
+}
+.game-review .avatar {
+	border: #fff 1px solid; left: 8px; width: 60px; top: 8px; height: 60px; position: absolute;
+}
+.game-review .userinfo {
+	font-size: 11px; left: 8px; color: #000; position: absolute; top: 75px;
+}
+.game-review span.author {
+	font-weight: bold; left: 159px; top: 18px;
+}
+.game-review span.time {
+	right: 17px; top: 18px;
+}
+.game-review p {
+	padding: 0; margin: 0; font-size: 12px; left: 159px; overflow: auto; width: 487px; top: 46px; height: 105px; position: absolute;
+}
+.odd-review {
+	background: url(/static/images/bg_game_review_1.png) #fff
+}
+.even-review {
+	background: url(/static/images/bg_game_review_2.png) #fff
 }
