@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block gameblock %}
+<!-- tag -->
+<div id="tag">
+  <h2>
+    <a href="/">home</a>
+    &gt;&gt; 
+    <a href="http://www.freeonlinegames.com/adventure-games/index.html">adventure games</a>
+    &gt;&gt; 
+    occident warrior
+  </h2>
+  <p>
+    <a href="http://www.freeonlinegames.com/alltags.php">all tags</a>
+    &nbsp; 
+    <a href="http://www.freeonlinegames.com/tag/adventure_games">adventure games</a>
+    &nbsp; 
+    <a href="http://www.freeonlinegames.com/tag/action_games">action games</a> 
+    &nbsp; 
+    <a href="http://www.freeonlinegames.com/tag/sword_fighting_games">sword fighting games</a>
+    &nbsp; 
+  </p>
+</div>
+<!-- /tag -->
+<!-- game -->
+<div id="game">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="600" height="450">
+  <param name="movie" value="/static/games/kuanggong/kuanggong.swf"/> 
+  <param name="quality" value="high"/>
+  <!--[if !ie]> <-->
+  <object data="/static/games/kuanggong/kuanggong.swf" width="600" height="450" type="application/x-shockwave-flash">
+    <param name="quality" value="high"/>
+    <param name="pluginurl" value="http://www.adobe.com/go/getflashplayer"/>
+    FAIL (the browser should render some flash content, not this).
+  </object>
+  <!--> <![endif]-->
+</object>
+</div>
+<!-- /game -->
+<!-- description -->
+<div class="game-description">
+  <img class="thumb" src="/static/games/kuanggong/kuanggong_logo.jpg" alt="kuanggong_logo" /> 
+  <span class="title"><b>game title:</b> occident warrior</span>
+  <span class="plays"><b>game plays:</b> 33,036</span>
+  <span class="rating"><b>game rating:</b> 6.00</span>
+  <span class="author"><b>author:</b> <a href="http://www.freeonlinegames.com/author_profile.php?id=">ddr</a></span> 
+  <div class="description">
+    <b>game description:</b> 
+    <p>the days of foriencia changed forever when the dark army of ash arrived taking over the realms! all hope is on the occident warrior to fight his way through 6 different world, learning new skills to defeat the evil lord. the occident warrior is a cute side scrolling battle game with anime/comic style graphics. </p>
+    <b>game instructions:</b> 
+    <p>· wasd = move <br />· j = attack<br />· k = jump</p>
+    <b>embed this game on your site</b> 
+    <p><input style="width: 500px" value='&lt;iframe width="420" height="670" src="http://www.freeonlinegames.com/embed.php?g_id=16461" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;' /></p>
+    <b>link to this game</b> 
+    <p><input style="width: 500px" value='&lt;a href="http://www.freeonlinegames.com/adventure-games/occident-warrior.html"&gt;play occident warrior at fog.com&lt;/a&gt;' /></p>
+  </div>
+  <div class="description-bottom"><!-- bottom --></div>
+</div>
+<!-- /description -->
+<!-- comment -->
+<div class="game-review odd-review">
+  <img class="avatar" src="/static/images/default.gif" alt="default" /> 
+  <div class="userinfo">
+    <b>joined:</b> may 2009<br />
+    <b>from:</b> not specified<br />
+    <b>posts:</b> 3<br />
+    <b>friends:</b> 0<br />
+  </div>
+  <span class="author"><b>reviewed by:</b> ourdead9</span>
+  <span class="time">10th may 2009 - 12:16 am</span> 
+  <p>how do u play the game you made its immpossible i cant play my game or test it or cosumize it<br /><br />game play:5 graphics:5 replayability:5 concept:5</p>
+</div>
+<div class="game-review even-review">
+  <img class="avatar" src="/static/images/default.gif" alt="default" /> 
+  <div class="userinfo">
+    <b>joined:</b> may 2009<br />
+    <b>from:</b> not specified<br />
+    <b>posts:</b> 3<br />
+    <b>friends:</b> 0<br />
+  </div>
+  <span class="author"><b>reviewed by:</b> ourdead9</span>
+  <span class="time">10th may 2009 - 12:16 am</span> 
+  <p>how do u play the game you made its immpossible i cant play my game or test it or cosumize it<br /><br />game play:5 graphics:5 replayability:5 concept:5</p>
+</div>      
+<!-- /comment -->
+{% endblock %}
