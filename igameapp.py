@@ -5,16 +5,27 @@ from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
- 
-#class ZzData(db.Model):
+from google.appengine.ext.db import GqlQuery
+
+class GameData(db.Model):
 #    author = db.UserProperty()
 #    url = db.StringProperty()
 #    disc = db.StringProperty(multiline=True)
 #    date = db.DateTimeProperty(auto_now_add=True)
+    name = db.StringProperty()
+    width = db.IntegerProperty()
+    height = db.IntegerProperty()
 
   
 class MainPage(webapp.RequestHandler):
     def get(self):
+ #       game = GameData()
+  #      game.name = 'kuanggong'
+  #      game.width = 550
+  #      game.height = 400
+  #      game.put()
+
+        
 #        user = users.get_current_user()
 
 #        dataList = ZzData.gql('')
@@ -31,14 +42,21 @@ class MainPage(webapp.RequestHandler):
 #            'user': user,
 #            'zzList': zzList,
         }
-        path = os.path.join(os.path.dirname(__file__), 'index.html')
+        path = os.path.join(os.path.dirname(__file__), "index.html")
         self.response.out.write(template.render(path, template_values))
         
 class GamePlay(webapp.RequestHandler):
     def get(self):
+        #query = GqlQuery("SELECT __key__ FROM GameData WHERE name = :1", "kuanggong")
+        #a = query.get()
+        id = self.request.get('id')
+        game = GameData.get_by_id(long(id))
         template_values = {
+            'name': game.name,
+            'width': game.width,
+            'height': game.height,
             }
-        path = os.path.join(os.path.dirname(__file__), 'gameplay.html')
+        path = os.path.join(os.path.dirname(__file__), "gameplay.html")
         self.response.out.write(template.render(path, template_values))           
 #class Submit(webapp.RequestHandler):
 #    def post(self):
@@ -64,8 +82,8 @@ class GamePlay(webapp.RequestHandler):
 #        self.redirect(users.create_login_url('/'))
 
 application = webapp.WSGIApplication([
-                                    ('/', MainPage),
-                                    ('/gameplay', GamePlay),
+                                    ("/", MainPage),
+                                    ("/gameplay", GamePlay),
 #                                    ('/submit', Submit),
 #                                    ('/login', Userlogin),
                                     ],

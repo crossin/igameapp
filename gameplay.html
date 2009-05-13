@@ -24,11 +24,11 @@
 <!-- /tag -->
 <!-- game -->
 <div id="game">
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="600" height="450">
-  <param name="movie" value="/static/games/kuanggong/kuanggong.swf"/> 
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="{{ width }}" height="{{ height }}">
+  <param name="movie" value="/static/games/{{ name }}/{{ name }}.swf"/> 
   <param name="quality" value="high"/>
   <!--[if !ie]> <-->
-  <object data="/static/games/kuanggong/kuanggong.swf" width="600" height="450" type="application/x-shockwave-flash">
+  <object data="/static/games/{{ name }}/{{ name }}.swf" width="{{ width }}" height="{{ height }}" type="application/x-shockwave-flash">
     <param name="quality" value="high"/>
     <param name="pluginurl" value="http://www.adobe.com/go/getflashplayer"/>
     FAIL (the browser should render some flash content, not this).
@@ -39,7 +39,7 @@
 <!-- /game -->
 <!-- description -->
 <div class="game-description">
-  <img class="thumb" src="/static/games/kuanggong/kuanggong_logo.jpg" alt="kuanggong_logo" /> 
+  <img class="thumb" src="/static/games/{{ name }}/{{ name }}_logo.jpg" alt="kuanggong_logo" /> 
   <span class="title"><b>game title:</b> occident warrior</span>
   <span class="plays"><b>game plays:</b> 33,036</span>
   <span class="rating"><b>game rating:</b> 6.00</span>
