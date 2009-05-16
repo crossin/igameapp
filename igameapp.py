@@ -29,7 +29,7 @@ class MainPage(webapp.RequestHandler):
 #        user = users.get_current_user()
 
 #        dataList = ZzData.gql('')
-#        data = db.GqlQuery("SELECT * FROM Greeting ORDER BY date DESC LIMIT 10")
+#        data = db.GqlQuery('SELECT * FROM Greeting ORDER BY date DESC LIMIT 10')
 #        zzList = []
 #        for data in dataList:
 #            if greeting.author:
@@ -37,26 +37,26 @@ class MainPage(webapp.RequestHandler):
 #            else:
 #                name = 'An anonymous person'
 #            content = cgi.escape(greeting.content)
-#            zzList.append({"url": data.url, "disc": cgi.escape(data.disc)})
+#            zzList.append({'url': data.url, 'disc': cgi.escape(data.disc)})
+        game_list = GameData.all()
         template_values = {
+            'game_list': game_list,
 #            'user': user,
 #            'zzList': zzList,
         }
-        path = os.path.join(os.path.dirname(__file__), "index.html")
+        path = os.path.join(os.path.dirname(__file__), 'index.html')
         self.response.out.write(template.render(path, template_values))
         
 class GamePlay(webapp.RequestHandler):
     def get(self):
-        #query = GqlQuery("SELECT __key__ FROM GameData WHERE name = :1", "kuanggong")
+        #query = GqlQuery('SELECT __key__ FROM GameData WHERE name = :1', 'kuanggong')
         #a = query.get()
-        id = self.request.get('id')
-        game = GameData.get_by_id(long(id))
+        key = self.request.get('key')
+        game = GameData.get(key)
         template_values = {
-            'name': game.name,
-            'width': game.width,
-            'height': game.height,
+            'game': game,
             }
-        path = os.path.join(os.path.dirname(__file__), "gameplay.html")
+        path = os.path.join(os.path.dirname(__file__), 'gameplay.html')
         self.response.out.write(template.render(path, template_values))           
 #class Submit(webapp.RequestHandler):
 #    def post(self):
@@ -81,9 +81,23 @@ class GamePlay(webapp.RequestHandler):
 #    def get(self):
 #        self.redirect(users.create_login_url('/'))
 
+class AddGame(webapp.RequestHandler):
+    def get(self):
+        game_list = GameData.all()
+        path = os.path.join(os.path.dirname(__file__), 'addgame.html')
+        self.response.out.write(template.render(path, {'game_list': game_list,}))
+    def post(self):
+        data = GameData()
+        data.name = self.request.get('gameName')
+        data.width = int(self.request.get('gameWidth'))
+        data.height = int(self.request.get('gameHeight'))
+        data.put()
+        self.redirect(users.create_login_url('/addgame'))    
+
 application = webapp.WSGIApplication([
-                                    ("/", MainPage),
-                                    ("/gameplay", GamePlay),
+                                    ('/', MainPage),
+                                    ('/gameplay', GamePlay),
+                                    ('/addgame', AddGame),
 #                                    ('/submit', Submit),
 #                                    ('/login', Userlogin),
                                     ],
@@ -92,5 +106,5 @@ application = webapp.WSGIApplication([
 def main():
     run_wsgi_app(application)
 
-if __name__ =="__main__":
+if __name__ =='__main__':
     main()

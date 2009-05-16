@@ -8,7 +8,7 @@
     &gt;&gt; 
     <a href="http://www.freeonlinegames.com/adventure-games/index.html">adventure games</a>
     &gt;&gt; 
-    occident warrior
+    {{ game.name }}
   </h2>
   <p>
     <a href="http://www.freeonlinegames.com/alltags.php">all tags</a>
@@ -24,11 +24,11 @@
 <!-- /tag -->
 <!-- game -->
 <div id="game">
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="{{ width }}" height="{{ height }}">
-  <param name="movie" value="/static/games/{{ name }}/{{ name }}.swf"/> 
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="{{ game.width }}" height="{{ game.height }}">
+  <param name="movie" value="/static/games/{{ game.key }}/game.swf"/> 
   <param name="quality" value="high"/>
   <!--[if !ie]> <-->
-  <object data="/static/games/{{ name }}/{{ name }}.swf" width="{{ width }}" height="{{ height }}" type="application/x-shockwave-flash">
+  <object data="/static/games/{{ game.key }}/game.swf" width="{{ game.width }}" height="{{ game.height }}" type="application/x-shockwave-flash">
     <param name="quality" value="high"/>
     <param name="pluginurl" value="http://www.adobe.com/go/getflashplayer"/>
     FAIL (the browser should render some flash content, not this).
@@ -39,11 +39,10 @@
 <!-- /game -->
 <!-- description -->
 <div class="game-description">
-  <img class="thumb" src="/static/games/{{ name }}/{{ name }}_logo.jpg" alt="kuanggong_logo" /> 
-  <span class="title"><b>game title:</b> occident warrior</span>
-  <span class="plays"><b>game plays:</b> 33,036</span>
-  <span class="rating"><b>game rating:</b> 6.00</span>
-  <span class="author"><b>author:</b> <a href="http://www.freeonlinegames.com/author_profile.php?id=">ddr</a></span> 
+  <img class="thumb" src="/static/games/{{ game.key }}/logo.jpg" alt="kuanggong_logo" /> 
+  <span class="title"><b>名称:</b> {{ game.name }}</span>
+  <span class="plays"><b>点击:</b> 33</span>
+  <span class="rating"><b>评分:</b> 6.00</span>
   <div class="description">
     <b>game description:</b> 
     <p>the days of foriencia changed forever when the dark army of ash arrived taking over the realms! all hope is on the occident warrior to fight his way through 6 different world, learning new skills to defeat the evil lord. the occident warrior is a cute side scrolling battle game with anime/comic style graphics. </p>

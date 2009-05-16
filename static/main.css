@@ -79,6 +79,9 @@ a:hover {
 .gameblock a.game span {
 	display: block; font-size: 0.8em; background: #cda; left: 2px; width: 73px; bottom: 2px; position: absolute; text-align: center;
 }
+.gameblock a.game img {
+	width: 73px; height: 80px;
+}
 .gameblock div.more {
 	clear: both; padding-right: 2px; font-weight: bold; text-align: right; text-decoration: none;
 }
@@ -125,7 +128,7 @@ ul.cloud a:hover {
 	background: url(/static/images/bg_game_description.png); padding: 0; margin: 15px auto; width: 663px; font-family: arial; position: relative;
 }
 .game-description span {
-	display: block; font-size: 12px; line-height: 10px; position: absolute; height: 10px;
+	display: block; font-size: 14px; line-height: 16px; position: absolute; height: 16px;
 }
 .game-description b {
 	color: #000;
@@ -134,13 +137,13 @@ ul.cloud a:hover {
 	border: #000 1px solid; left: 8px; width: 73px; top: 28px; height: 80px; position: absolute;
 }
 .game-description span.title {
-	font-weight: bold; left: 101px; top: 18px;
+	font-weight: bold; left: 100px; top: 24px;
 }
 .game-description span.plays {
-	left: 101px; top: 32px;
+	left: 330px; top: 24px;
 }
 .game-description span.rating {
-	left: 425px; top: 18px;
+	left: 500px; top: 24px;
 }
 .game-description span.author {
 	font-weight: bold; left: 425px; top: 32px;
