@@ -1,10 +1,20 @@
 <html>
   <body>
     <form action="/addgame" method="post">
-      <label target="gameName">Name</label><input type="text" name="gameName"><br />
-      <label target="gameWidth">Width</label><input type="text" name="gameWidth"><br />
-      <label target="gameHeight">Height</label><input type="text" name="gameHeight"><br />
-      <input type="submit" value="add">
+      <label for="gameName">Name</label><input type="text" name="gameName" id="gameName"><br />
+      <label for="gameWidth">Width</label><input type="text" name="gameWidth" id="gameWidth"><br />
+      <label for="gameHeight">Height</label><input type="text" name="gameHeight" id="gameHeight"><br />
+      <select name="gameCategory" id="gameCategory">
+        {% for category in category_list %}
+        <option value="{{ category.key }}">{{ category.name }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <input type="submit" value="addGame">
+    </form>
+    <form action="/addgame" method="post">
+      <label for="category">Name</label><input type="text" name="category" id="category"><br />
+      <input type="submit" value="addCategory">
     </form>
     <table>
       <tr>
@@ -15,7 +25,7 @@
       {% for game in game_list %}
       <tr>
         <td>{{ game.name }}</td>
-        <td>{{ game.key.id }}</td>
+        <td>{{ game.category.name }}</td>
         <td>{{ game.key }}</td>
       </tr>
       {% endfor %}
