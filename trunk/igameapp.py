@@ -15,6 +15,10 @@ class GameData(db.Model):
     name = db.StringProperty()
     width = db.IntegerProperty()
     height = db.IntegerProperty()
+    category = db.ReferenceProperty()
+    
+class Category(db.Model):
+    name = db.StringProperty()
 
   
 class MainPage(webapp.RequestHandler):
@@ -84,14 +88,25 @@ class GamePlay(webapp.RequestHandler):
 class AddGame(webapp.RequestHandler):
     def get(self):
         game_list = GameData.all()
+        category_list = Category.all()
+        #for item in game_list:
+        #    if item.name == '432':
+        #        item.delete()
+            
         path = os.path.join(os.path.dirname(__file__), 'addgame.html')
-        self.response.out.write(template.render(path, {'game_list': game_list,}))
+        self.response.out.write(template.render(path, {'game_list': game_list, 'category_list': category_list,}))
     def post(self):
-        data = GameData()
-        data.name = self.request.get('gameName')
-        data.width = int(self.request.get('gameWidth'))
-        data.height = int(self.request.get('gameHeight'))
-        data.put()
+        if self.request.get('gameName'):
+            data = GameData()
+            data.name = self.request.get('gameName')
+            data.width = int(self.request.get('gameWidth'))
+            data.height = int(self.request.get('gameHeight'))
+            data.category = Category.get(self.request.get('gameCategory'))
+            data.put()
+        if self.request.get('category'):
+            data = Category()
+            data.name = self.request.get('category')
+            data.put()
         self.redirect(users.create_login_url('/addgame'))    
 
 application = webapp.WSGIApplication([
