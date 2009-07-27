@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block gameblock %}
+<!-- tag -->
+<div id="tag">
+  <h2>
+    <a href="/">home</a>
+    &gt;&gt; 
+    {{ category.name }}
+  </h2>
+</div>
+<!-- /tag -->
+<!-- page -->
+<table class="pagenums">
+  <tr>
+    <td>first</td>
+    <td>previous</td>
+    <td class="cur_page">1</td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index2.html">2</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index3.html">10</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index2.html">next</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index94.html">last</a></td>
+  </tr>
+</table>
+<!-- /page -->            
+<!-- games -->
+<table class="gamelist" cellspacing="5" cellpadding="0" width="100%" align="left" border="0">
+  {% for game in game_list %}
+  <tr class="{% if forloop.counter|divisibleby:2 %}vids_catlist0{% else %}vids_catlist1{% endif %}">
+    <td valign="middle" align="center" width="80" height="70">
+      <a href="/gameplay?key={{ game.key }}">
+        <img alt="{{ game.name }}" src="/static/games/{{ game.key }}/logo.jpg" />
+      </a>
+    </td>
+    <td valign="top">
+      <strong>title: </strong>
+      <img class="star" alt="game" src="/static/images/star.png" />
+      <a class="title" href="/gameplay?key={{ game.key }}">{{ game.name }}</a>
+      <br />
+      <strong>played: </strong>
+      7,839
+      <br />
+      <strong>description: </strong>
+      'siren of yin yang' is based on the well known 'swap the tiles' principle it's worth a shot as it comes with great grafix'n'animations!
+      ... 
+      <a href="/gameplay?key={{ game.key }}">play</a> 
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<!-- /games -->
+<!-- page -->
+<table class="pagenums">
+  <tr>
+    <td>first</td>
+    <td>previous</td>
+    <td class="cur_page">1</td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index2.html">2</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index3.html">10</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index2.html">next</a></td>
+    <td><a href="http://www.freeonlinegames.com/new-games/index94.html">last</a></td>
+  </tr>
+</table>
+<!-- /page -->
+{% endblock %}

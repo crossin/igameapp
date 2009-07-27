@@ -3,77 +3,13 @@
 {% block gameblock %}
 <!-- newgame -->
 <div class="gameblock">
-  <h1>Editor's Choice Of New Free Online Games (<a href="#">submit Your Game Here</a>)</h1>
+  <h1>Editor's Choice Of New Free Online Games</h1>
   {% for game in game_list %}
   <a class="game" href="/gameplay?key={{ game.key }}">
-    <img src="/static/games/{{ game.key }}/logo.jpg" alt="game" /> 
-    <span>游戏名称</span> 
+    <img src="/static/games/{{ game.key }}/logo.jpg" alt="{{ game.name }}" /> 
+    <span>{{ game.name }}</span> 
   </a>
   {% endfor %}
-  <a class="game" href="/gameplay?id=2001">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>游戏名称</span> 
-  </a>
-  <a class="game" href="/gameplay?id=1">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One One One One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/1/1.jpg" alt="game" /> 
-    <span>Game One</span> 
-  </a>
-  <a class="game" href="#">
-    <img src="/static/games/2/2.jpg" alt="game" /> 
-    <span>Game Two</span> 
-  </a>
   <div class="more">
     <a href="#">See all new game submissions</a>
   </div>
@@ -81,7 +17,7 @@
 <!-- /newgame -->
 <!-- hotgame -->
 <div class="gameblock">
-  <h1>Most Played Free Online Games (updated Hourly)</h1>
+  <h1>Most Played Free Online Games</h1>
   <a class="game" href="#">
     <img src="/static/games/2/2.jpg" alt="game" />
     <span>Game Two</span>

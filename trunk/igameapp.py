@@ -16,9 +16,11 @@ class GameData(db.Model):
     width = db.IntegerProperty()
     height = db.IntegerProperty()
     category = db.ReferenceProperty()
+    dir = db.StringProperty()
     
 class Category(db.Model):
     name = db.StringProperty()
+    count = db.IntegerProperty()
 
   
 class MainPage(webapp.RequestHandler):
@@ -43,8 +45,10 @@ class MainPage(webapp.RequestHandler):
 #            content = cgi.escape(greeting.content)
 #            zzList.append({'url': data.url, 'disc': cgi.escape(data.disc)})
         game_list = GameData.all()
+        category_list = Category.all()
         template_values = {
             'game_list': game_list,
+            'category_list': category_list,
 #            'user': user,
 #            'zzList': zzList,
         }
@@ -57,8 +61,10 @@ class GamePlay(webapp.RequestHandler):
         #a = query.get()
         key = self.request.get('key')
         game = GameData.get(key)
+        category_list = Category.all()
         template_values = {
             'game': game,
+            'category_list': category_list,
             }
         path = os.path.join(os.path.dirname(__file__), 'gameplay.html')
         self.response.out.write(template.render(path, template_values))           
@@ -85,12 +91,39 @@ class GamePlay(webapp.RequestHandler):
 #    def get(self):
 #        self.redirect(users.create_login_url('/'))
 
+class GameList(webapp.RequestHandler):
+    def get(self):
+        #query = GqlQuery('SELECT __key__ FROM GameData WHERE name = :1', 'kuanggong')
+        #a = query.get()
+        #key = self.request.get('key')
+        #game = GameData.get(key)
+        key = self.request.get('key')
+        category = Category.get(key)
+        #query = GqlQuery('SELECT __key__ FROM Category WHERE name = :1', '')
+        game_list = GameData.gql('WHERE category = :1', category)
+        category_list = Category.all()
+        template_values = {
+            'category': category,
+            'game_list': game_list,
+            'category_list': category_list,
+            }
+        path = os.path.join(os.path.dirname(__file__), 'gamelist.html')
+        self.response.out.write(template.render(path, template_values))           
+
+        
 class AddGame(webapp.RequestHandler):
     def get(self):
         game_list = GameData.all()
         category_list = Category.all()
+        #query = GqlQuery('SELECT __key__ FROM Category WHERE name = :1', '')
+        #cat = category_list.get()
+        #print cat.count
         #for item in game_list:
-        #    if item.name == '432':
+        #    item.category = cat
+        #    item.save()
+        #    item.category.count += 1
+        #    item.category.save()
+        #    if category_list.name == '432':
         #        item.delete()
             
         path = os.path.join(os.path.dirname(__file__), 'addgame.html')
@@ -109,12 +142,31 @@ class AddGame(webapp.RequestHandler):
             data.put()
         self.redirect(users.create_login_url('/addgame'))    
 
+class gigapp(webapp.RequestHandler):
+    def get(self):
+        template_values = {
+            'user': 'please post',
+            }
+        path = os.path.join(os.path.dirname(__file__), 'gigapp.html')
+        self.response.out.write(template.render(path, template_values))
+    def post(self):
+        user = self.request.get('gacall_useremail');
+        template_values = {
+            'user': user,
+            }
+        path = os.path.join(os.path.dirname(__file__), 'gigapp.html')
+        self.response.out.write(template.render(path, template_values))
+        
+        
+
 application = webapp.WSGIApplication([
                                     ('/', MainPage),
                                     ('/gameplay', GamePlay),
+                                    ('/gamelist', GameList),
                                     ('/addgame', AddGame),
 #                                    ('/submit', Submit),
 #                                    ('/login', Userlogin),
+                                    ('/gigapp', gigapp),
                                     ],
                                     debug=True)
 

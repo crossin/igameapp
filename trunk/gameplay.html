@@ -46,6 +46,41 @@
   <div class="description-bottom"><!-- bottom --></div>
 </div>
 <!-- /description -->
+<!-- rate -->
+<div class="game-review">
+  <form action="/gameplay?key={{ game.key }}" method="post">
+    <label>请评分：</label>
+    <input type="radio" name="gameRate" id="gameRate1" />
+    <label for="gameRate1">1分</label>
+    <input type="radio" name="gameRate" id="gameRate2" />
+    <label for="gameRate2">2分</label>
+    <input type="radio" name="gameRate" id="gameRate3" />
+    <label for="gameRate3">3分</label>
+    <input type="radio" name="gameRate" id="gameRate4" />
+    <label for="gameRate4">4分</label>
+    <input type="radio" name="gameRate" id="gameRate5" />
+    <label for="gameRate5">5分</label>
+    <br />
+    <textarea name="gameComment" id="gameComment" onfocus="if(this.value=='请输入评论内容...') this.value=''" onblur="if(this.value=='') this.value='请输入评论内容...'">请输入评论内容...</textarea>
+    <input type="text" name="commenter" id="commenter"  onfocus="if(this.value=='请输入您的大名...') this.value=''" onblur="if(this.value=='') this.value='请输入您的大名...'" value="请输入您的大名..."/>
+    <input type="submit" value="提交">
+  </form>
+
+
+
+  <!--img class="avatar" src="/static/images/default.gif" alt="default" /> 
+  <div class="userinfo">
+    <b>joined:</b> may 2009<br />
+    <b>from:</b> not specified<br />
+    <b>posts:</b> 3<br />
+    <b>friends:</b> 0<br />
+  </div>
+  <span class="author"><b>reviewed by:</b> ourdead9</span>
+  <span class="time">10th may 2009 - 12:16 am</span> 
+  <p>how do u play the game you made its immpossible i cant play my game or test it or cosumize it<br /><br />game play:5 graphics:5 replayability:5 concept:5</p-->
+</div>
+<br />
+<!-- /rate -->
 <!-- comment -->
 <div class="game-review odd-review">
   <img class="avatar" src="/static/images/default.gif" alt="default" /> 

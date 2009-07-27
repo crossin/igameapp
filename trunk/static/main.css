@@ -14,10 +14,10 @@ table {
 }
 
 a {
-	color: #785
+	color: #785;
 }
 a:hover {
-	color: #530
+	color: #530;
 }
 
 .link_login {
@@ -62,7 +62,7 @@ a:hover {
 	border: #999 1px solid; padding: 2px 4px; margin: 2px; font-size: 1em; background: #cda;
 }
 .gameblock h1 a {
-	color: #f90; text-decoration: none;
+	color: #d51; text-decoration: none;
 }
 .gameblock h1 a:hover {
 	color: #530;
@@ -97,7 +97,7 @@ ul.cloud li {
 	float: left; padding: 0; margin: 0; width: 50%;
 }
 ul.cloud a {
-	text-decoration: none; padding: 0 4px
+	text-decoration: none; padding: 0 4px;
 }
 ul.cloud a:hover {
 	text-decoration: underline;
@@ -157,13 +157,19 @@ ul.cloud a:hover {
 }
 
 .game-review {
-	padding: 0; background: url(/images/bg_game_description.png) #fff; margin: 5px auto; width: 663px; height: 166px; font-family: arial; position: relative;
+	padding: 0; background: url(/static/images/bg_game_review.png) #fff; margin: 5px auto; width: 663px; height: 166px; font-family: arial; position: relative;
+}
+.game-review form{
+	padding: 18px;
+}
+.game-review textarea{
+	margin: 4px 0; height: 70px; width: 622px; overflow: auto;
 }
 .game-review span {
-	display: block; font-size: 12px; line-height: 10px; position: absolute; height: 10px
+	display: block; font-size: 12px; line-height: 10px; position: absolute; height: 10px;
 }
 .game-review span b {
-	color: #000
+	color: #000;
 }
 .game-review .avatar {
 	border: #fff 1px solid; left: 8px; width: 60px; top: 8px; height: 60px; position: absolute;
@@ -181,8 +187,44 @@ ul.cloud a:hover {
 	padding: 0; margin: 0; font-size: 12px; left: 159px; overflow: auto; width: 487px; top: 46px; height: 105px; position: absolute;
 }
 .odd-review {
-	background: url(/static/images/bg_game_review_1.png) #fff
+	background: url(/static/images/bg_game_review_1.png) #fff;
 }
 .even-review {
-	background: url(/static/images/bg_game_review_2.png) #fff
+	background: url(/static/images/bg_game_review_2.png) #fff;
+}
+
+.pagenums {
+	margin: 0 0 5px; height: 15px; width: 670px; clear: both;
+}
+.pagenums td {
+	border: #000 1px solid; text-align: center;
+}
+.pagenums td.cur_page {
+	color: #888;
+}
+.pagenums a {
+	font-weight: bold; font-size: 12px; font-family: arial, helvetica, sans-serif;
+}
+.pagenums a:hover {
+	text-decoration: none;
+}
+
+.gamelist td{
+	padding: 5px;
+}
+.gamelist a.title{
+	color: #d51;
+}
+.gamelist a img{
+	width: 70px; height: 60px;
+}
+.gamelist a img.star{
+	width: 16px; height: 15px;
+}
+
+.vids_catlist0 {
+	background: #d5ddc6;
+}
+.vids_catlist1 {
+	background: #ccddaa;
 }
