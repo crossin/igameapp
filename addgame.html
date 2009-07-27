@@ -16,19 +16,45 @@
       <label for="category">Name</label><input type="text" name="category" id="category"><br />
       <input type="submit" value="addCategory">
     </form>
-    <table>
+    <table border="1">
+      <h3>Game List</h3>
       <tr>
         <th>Name</th>
         <th>Width</th>
         <th>Height</th>
+        <th>Category</th>
+        <th>Key</th>
+        <th>ID</th>
       </tr>
       {% for game in game_list %}
       <tr>
         <td>{{ game.name }}</td>
+        <td>{{ game.width }}</td>
+        <td>{{ game.height }}</td>
         <td>{{ game.category.name }}</td>
         <td>{{ game.key }}</td>
+        <td>{{ game.key.id }}</td>
       </tr>
       {% endfor %}
     </table>
+    <br />
+    <table border="1">
+      <h3>Category List</h3>
+      <tr>
+        <th>Name</th>
+        <th>Count</th>
+        <th>Key</th>
+        <th>ID</th>
+      </tr>
+      {% for category in category_list %}
+      <tr>
+        <td>{{ category.name }}</td>
+        <td>{{ category.count }}</td>
+        <td>{{ category.key }}</td>
+        <td>{{ category.key.id }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
   </body>
 </html>

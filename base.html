@@ -63,78 +63,11 @@
         <!-- index -->
         <td id="index" valign="top" width="300">
           <ul class="cloud">
+            {% for category in category_list %}
             <li>
-              <a href="#">Hello games (366)</a>
+              <a href="/gamelist?key={{ category.key }}">{{ category.name }} ({{ category.count }})</a>
             </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)lello ge11</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
-            <li>
-              <a href="#">Hello games (366)</a>
-            </li>
+            {% endfor %}
           </ul>
         </td>
         <!-- /index -->
